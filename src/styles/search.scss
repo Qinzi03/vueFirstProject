@@ -1,0 +1,42 @@
+.lr-search-container{
+  .width280{
+    width:280px;
+  }
+  .width320 {
+    width:315px
+  }
+  .width400 {
+    width:400px
+  }
+  .width120{
+    width:120px;
+  }
+  .width300{
+    width:300px;
+  }
+  .width80 {
+    width:80px;
+    min-width:80px;
+    display: inline-block;
+  }
+  .lr-search-el-select{
+    width:100%;
+  }
+  .lr-search-input-with-select{
+    width:100%;
+    .el-select>.el-input{
+      width:110px;
+    }
+  }
+  .el-input__prefix, .el-input__suffix{
+    line-height:36px;
+  }
+  .el-range-separator{
+    width:20px !important;
+    display: inline-block;
+    text-align: center;
+    }
+    .el-date-editor{
+      width:240px;
+    }
+}

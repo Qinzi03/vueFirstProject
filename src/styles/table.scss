@@ -1,0 +1,28 @@
+$firstPadding: 0;
+$lastPadding: 0;
+
+.lr-table-esp{
+  .el-table__header{
+    tr {
+      th:first-child {
+        padding-left: #{$firstPadding}px;
+      }
+      th:last-child {
+        padding-right: #{$lastPadding}px;
+      }
+    }
+  }
+  .el-table__body{
+    tr {
+      td:first-child {
+        padding-left: #{$firstPadding}px;
+        .el-tooltip{
+          padding-right: 15px;
+        }
+      }
+      td:last-child {
+        padding-right: #{$lastPadding}px;
+      }
+    }
+  }
+}

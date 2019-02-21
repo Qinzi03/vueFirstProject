@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="11px" viewBox="0 0 14 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_arrow_right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="通用版" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="menu+topbar展开" transform="translate(-76.000000, -949.000000)">
+            <g id="menu">
+                <g id="收起button" transform="translate(0.000000, 929.000000)">
+                    <g id="ic_arrow_right" transform="translate(83.000000, 26.000000) scale(-1, 1) translate(-83.000000, -26.000000) translate(74.000000, 17.000000)">
+                        <g id="ic_put_normal" transform="translate(9.000000, 9.000000) rotate(90.000000) translate(-9.000000, -9.000000) ">
+                            <path d="M0,0 L18,0 L18,18 L0,18 L0,0 Z" id="Rectangle-23-Copy-11" fill="#FFE4E4" fill-rule="nonzero" opacity="0"></path>
+                            <path d="M9.54450899,5.29030692 L9.54450899,14.4803777 C9.54450899,14.924356 9.18626456,15.2842714 8.74434765,15.2842714 C8.30243075,15.2842714 7.94418631,14.924356 7.94418631,14.4803777 L7.94418631,5.32508069 L5.2375114,8.1279246 C4.93053013,8.44581302 4.42277111,8.45349421 4.10339989,8.14508101 C3.78402867,7.83666781 3.77398465,7.32895003 4.08096592,7.01106161 L8.13309201,2.81496222 C8.44007329,2.4970738 8.94783231,2.48939262 9.26720352,2.79780581 L13.4292158,6.81701436 C13.748587,7.12542755 13.7586311,7.63314533 13.4516498,7.95103375 C13.1446685,8.26892217 12.6369095,8.27660335 12.3175383,7.96819015 L9.54450899,5.29030692 Z" fill-opacity="0.75" fill="#FFFFFF" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

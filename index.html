@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <style>
+      .lr-page-optimizer{
+        width: 100vw;
+        height: 100vh;
+        background: #ffffff;
+        position: fixed;
+        z-index: 10201;
+        top: 0;
+        left: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+      .lr-page-optimizer .lr-page-optimizer--content{
+        text-align: center;
+      }
+      .lr-page-optimizer .lr-page-optimizer--content img{
+        width: 200px;
+      }
+      .lr-page-optimizer .lr-page-optimizer--content span{
+        text-align: center;
+        margin-top: 23px;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.65);
+        letter-spacing: 0;
+        line-height: 14px;
+        display: inline-block;
+      }
+    </style>
+    <script>
+      // 修改版本请更改 src/strategy/index.js 14行，此处为构建时需要的配置
+      window.PLATFORM = '$PLATFORM'
+    </script>
+  </head>
+  <body>
+    <div class="lr-page-optimizer">
+      <div class="lr-page-optimizer--content">
+        <div><img src="<%= htmlWebpackPlugin.options.imageBase %>static/img/loading_loading.png" /></div>
+        <div><span>页面加载中,请稍后...</span></div>
+      </div>
+    </div>
+    <div id="app">
+      <video id="videoView" autoplay width="0" height="0"></video>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

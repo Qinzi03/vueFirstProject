@@ -1,0 +1,39 @@
+/* element-ui 改变主题色变量 */
+$--color-primary: #7460EE ;
+$--color-white:#fff;
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%);
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+
+$blue:#324157;
+$light-blue:#3A71A8;
+$red:#C03639;
+$pink: #E65D6E;
+$green: #30B08F;
+$tiffany: #4AB7BD;
+$yellow:#FEC171;
+$panGreen: #30B08F;
+$font-color-title: #333333; //标题色号
+$font-color-normal: #666666; //字体色号
+$font-size-normal: 14; //普通字号
+$font-size-small: 12; //小字号
+$menuIconColor: #aeaac7; //侧边栏按钮颜色
+
+//sidebar
+$menuWidth: 166;
+$menuCollapseWidth: 72;
+$logoHeight: 60;
+$navbarHeight: $logoHeight;
+$userInfoHeight: 86;
+$menuBg:#304156;
+$subMenuBg: inherit;
+$menuHover: rgba(255,255,255,0.26);
+$menuItemBorderLeft: 3;
+$menuItemBorderLeftColor: $--color-primary;
+$shadowColor: #ccc;
+$pageBg: #f8f8fd;
+$dialogHeaderBg:#f3f5f7;
+$border:#E6EAEE;
+$blackBase:#000;
+$dashboardLeftWidth: 150; //首页左侧宽度

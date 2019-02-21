@@ -1,0 +1,241 @@
+@import "./variables";
+
+//覆盖一些element-ui样式
+
+.el-breadcrumb__inner, .el-breadcrumb__inner a{
+  font-weight: 400!important;
+}
+
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+.cell {
+  .el-tag {
+    margin-right: 0px;
+  }
+}
+
+.small-padding {
+  .cell {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.fixed-width{
+  .el-button--mini{
+    padding: 7px 10px;
+    width: 60px;
+  }
+}
+
+.status-col {
+  .cell {
+    padding: 0 10px;
+    text-align: center;
+    .el-tag {
+      margin-right: 0px;
+    }
+  }
+}
+
+//暂时性解决dialog 问题 https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+//文章页textarea修改样式
+.article-textarea {
+  textarea {
+    padding-right: 40px;
+    resize: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid #bfcbd9;
+  }
+}
+
+//element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+//dropdown
+.el-dropdown-menu{
+  a{
+    display: block
+  }
+}
+
+.el-menu-item{
+  border-left: 4px solid transparent;
+  &.is-active, &:hover{
+    background-color: #{$menuHover} !important;
+  }
+
+}
+
+.el-submenu__title{
+  &:hover{
+    background: #{$menuHover} !important;
+  }
+}
+// 按钮风格变成紫色
+.el-button--primary{
+  background-color:#7460ee;
+  border-color:#7460ee;
+}
+.el-button:focus, .el-button:hover{
+  color:#8B7BE7;
+  border-color:#8B7BE7;
+  // background-color:#8B7BE7;
+}
+.el-button--primary:focus, .el-button--primary:hover{
+  background-color:#8B7BE7;
+  border-color:#8B7BE7;
+  color:#fff;
+}
+.el-button--text{
+  color:#8B7BE7;
+  background:0 0;
+  padding-left: 0;
+  padding-right: 0;
+  border: none;
+}
+.el-button--text:focus, .el-button--text:hover{
+  color:$--color-primary;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active{
+  background-color:$--color-primary;
+  border-color:$--color-primary;
+}
+
+.el-radio-button__inner:hover{
+  color: #606266;
+}
+
+.el-radio-button__orig-radio:checked + .el-radio-button__inner{
+  background:rgba(255,255,255,1) !important;
+  // background:rgba(227,223,251,1) !important;
+  color: $--color-primary !important;
+}
+
+.el-radio-button__orig-radio:checked+.el-radio-button__inner{
+  background-color: #E3DFFB;;
+  border-color:$--color-primary;
+  color: $--color-primary;
+  box-shadow: -1px 0 0 0 $--color-primary;
+}
+
+.el-select .el-input.is-focus .el-input__inner{
+  border-color: $--color-primary;
+}
+
+.el-select-dropdown__list{
+  .el-select-dropdown__item.selected{
+    color: $--color-primary;
+  }
+}
+
+.el-table th>.cell {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+
+.el-breadcrumb__inner{
+  a:hover{
+    color: $--color-primary;
+  }
+  &.is-link:hover{
+    color: $--color-primary;
+  }
+}
+
+.el-range-editor{
+  &.is-active {
+    border-color: $--color-primary;
+    &:hover {
+      border-color: $--color-primary;
+    }
+  }
+}
+
+.el-time-panel__btn.confirm{
+  color: $--color-primary;
+}
+
+.el-date-table td.available:hover{
+  color: $--color-primary;
+}
+
+.el-date-table td{
+  &.available:hover{
+    color: $--color-primary;
+  }
+  &.today span{
+    color: $--color-primary;
+  }
+}
+
+.el-table {
+  .el-table__header th{
+    font-size: 14px;
+  }
+  .el-table__row{
+    font-size: 14px;
+  }
+  .el-table__row:nth-child(odd){
+    background: #f9f9fa ;
+  }
+  .el-table__row:hover{
+    background: #f1effc !important;
+  }
+  th:not(.el-table-column--selection), td:not(.el-table-column--selection){
+    border-right:1px solid rgba(218,213,232,0.6);
+  }
+}
+
+.el-tag--disabled{
+  color: #d9d9d9;
+}
+.el-tag--going{
+  color: #7460ee;
+}
+.el-tag--finished{
+  color: #57c542;
+}
+.el-tag--stopped{
+  color: #F5A623;
+}
+.el-tag--undeal {
+  color: #F66C6F;
+}
+// 搜索框间距问题
+
+.el-input__suffix{
+  right: 8px;
+}
+// 下拉框hover
+.el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
+  background-color: rgba(116, 96, 238, .1)!important;
+}
+
+.el-submenu__icon-arrow{
+  color: rgba(255, 255, 255, 0.65) !important;
+}

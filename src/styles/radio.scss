@@ -1,0 +1,18 @@
+.lr-radio {
+  .el-radio__input.is-checked+.el-radio__label{
+    color:$--color-primary;
+    border-color:$--color-primary;
+  }
+  
+  
+  .el-radio__input.is-checked .el-radio__inner{
+    color:$--color-primary;
+    background-color: $--color-primary;
+    background:$--color-primary;
+    border-color:$--color-primary;
+  }
+  
+  .el-radio__inner:hover {
+    border-color: $--color-primary;
+  }
+}

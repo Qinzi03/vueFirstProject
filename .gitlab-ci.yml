@@ -1,0 +1,81 @@
+# before_script:
+#  - apk add --update curl && rm -rf /var/cache/apk/*
+#  - |
+#    if [ "$CI_PIPELINE_SOURCE" != "web" ]; then
+#      curl --request POST --header "PRIVATE-TOKEN: ux1CNHRM3LCLzFy2PrVy" "http://gitlab.listenrobot.com/api/v4/projects/$CI_PROJECT_ID/pipelines/$CI_PIPELINE_ID/cancel"
+#      echo "请手动启动pipeline"
+#      exit 0
+#    fi
+
+stages:
+  - build
+  - upload
+  - deploy
+
+variables:
+  DOCKER_DRIVER: overlay
+
+build:
+  image: node:8.12-alpine
+  stage: build
+  script:
+    - echo VERSION=$CI_COMMIT_REF_NAME > .version
+    - npm install -g cnpm --registry=https://registry.npm.taobao.org
+    - cnpm install
+    - rm -rf dist
+    - npm run build
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - dist
+  only:
+    - tags
+
+upload:
+  image: ubuntu:latest
+  stage: upload
+  dependencies:
+    - build
+  script:
+    - ./deploy.sh $CI_COMMIT_REF_NAME
+  only:
+    - tags
+
+deploy_fangchan:
+  image: docker:dind
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - docker build --build-arg PLATFORM=TYPE_REAL_ESTATE -t harbor.listenrobot.com/web/crm_web:fangchan_$CI_COMMIT_REF_NAME .
+    - docker login -u web -p Web123456 harbor.listenrobot.com
+    - docker push harbor.listenrobot.com/web/crm_web:fangchan_$CI_COMMIT_REF_NAME
+    - docker rmi harbor.listenrobot.com/web/crm_web:fangchan_$CI_COMMIT_REF_NAME
+  only:
+    - tags
+
+deploy_common:
+  image: docker:dind
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - docker build --build-arg PLATFORM=TYPE_COMMON -t harbor.listenrobot.com/web/crm_web:common_$CI_COMMIT_REF_NAME .
+    - docker login -u web -p Web123456 harbor.listenrobot.com
+    - docker push harbor.listenrobot.com/web/crm_web:common_$CI_COMMIT_REF_NAME
+    - docker rmi harbor.listenrobot.com/web/crm_web:common_$CI_COMMIT_REF_NAME
+  only:
+    - tags
+
+deploy_unicom:
+  image: docker:dind
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - docker build --build-arg PLATFORM=TYPE_WUXI_UNICOM -t harbor.listenrobot.com/web/crm_web:wuxi_$CI_COMMIT_REF_NAME .
+    - docker login -u web -p Web123456 harbor.listenrobot.com
+    - docker push harbor.listenrobot.com/web/crm_web:wuxi_$CI_COMMIT_REF_NAME
+    - docker rmi harbor.listenrobot.com/web/crm_web:wuxi_$CI_COMMIT_REF_NAME
+  only:
+    - tags
