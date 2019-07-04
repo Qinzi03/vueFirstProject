@@ -124,7 +124,7 @@ const user = {
         }
       }
       return new Promise((resolve, reject) => {
-        http.post(apiMap.login, {
+        http.post('/login', {
           account: userInfo.account.trim(),
           password: userInfo.password.trim(),
           ...extendData

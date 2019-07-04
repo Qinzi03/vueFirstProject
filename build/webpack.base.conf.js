@@ -28,6 +28,7 @@ module.exports = {
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
+    libraryExport: 'default',
     publicPath:
       process.env.NODE_ENV === 'production'
         ? config.build.assetsPublicPath
@@ -38,7 +39,8 @@ module.exports = {
     alias: {
       'vue$':'vue/dist/vue.common.js',
       '@': resolve('src')
-    }
+    },
+    symlinks: false
   },
   module: {
     rules: [

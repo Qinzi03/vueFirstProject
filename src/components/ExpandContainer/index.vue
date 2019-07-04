@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div :id="id" class="lr-expand-container__item" :style="itemClass">
+    <div :id="id" :style="itemClass" class="lr-expand-container__item">
       <slot />
     </div>
-    <div v-if="show" :style="{ 'margin-right': right + 'px'}" @click.stop="toggle" class="lr-expand-container__action">
+    <div v-if="show" :style="{ 'margin-right': right + 'px'}" class="lr-expand-container__action" @click.stop="toggle">
       <template v-if="collapse">
         更多<i class="el-icon-caret-bottom" />
       </template>

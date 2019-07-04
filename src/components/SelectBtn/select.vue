@@ -1,9 +1,9 @@
 <template>
-  <el-dropdown trigger="hover" class="lr-select-btn" :class="btnPosition" @command="changeBtn">
+  <el-dropdown :class="btnPosition" trigger="hover" class="lr-select-btn" @command="changeBtn">
     <el-button>
       {{ initDesc }}<i class="el-icon-arrow-down el-icon--right"></i>
     </el-button>
-    <el-dropdown-menu slot="dropdown" class="lr-dropdown" :style="{ 'width': itemWidth }">
+    <el-dropdown-menu slot="dropdown" :style="{ 'width': itemWidth }" class="lr-dropdown">
       <el-dropdown-item v-for="(item, $index) in initOption" :command="item" :key="$index" :disabled="item.flag">
         <span v-if="item.author">{{ item.value }}</span>
       </el-dropdown-item>
@@ -20,7 +20,9 @@ export default {
     },
     initOption: {
       type: Array,
-      default: []
+      default: function() {
+        return []
+      }
     },
     itemWidth: {
       type: String,

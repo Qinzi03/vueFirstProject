@@ -2,7 +2,7 @@
   <div v-if="route">
     <template v-if="route.children.length === 1">
       <div :class="{ 'is-current': route.children[0].name === $route.name }" class="lr-menu-item" @click.stop="changeRoute(route.children[0])">
-        <item :isExpand="isExpand" :icon="route.children[0].meta.icon" :title="route.children[0].meta.title"/>
+        <item :is-expand="isExpand" :icon="route.children[0].meta.icon" :title="route.children[0].meta.title"/>
       </div>
     </template>
     <template v-else>
@@ -12,7 +12,7 @@
         </div>
         <div slot="reference">
           <div :class="{ 'is-current': (parentName === route.name) }" class="lr-menu-item" @click="changeRoute(route)">
-            <item :isExpand="isExpand" :icon="route.meta.icon" :title="route.meta.title"/>
+            <item :is-expand="isExpand" :icon="route.meta.icon" :title="route.meta.title"/>
             <i v-show="isExpand" class="el-icon-arrow-right" />
           </div>
         </div>

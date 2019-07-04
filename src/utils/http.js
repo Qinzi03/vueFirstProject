@@ -4,7 +4,7 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
 import apiMap from '@/api/index'
-import router from '@/router/index'
+// import router from '@/router/index'
 import { getAuthModel } from '@/utils/auth'
 import store from '@/store/index'
 
@@ -69,9 +69,9 @@ const httpInstance = {
           if (statusCode === 401) {
             showErrorMessage('请重新登录')
             reject({ message: '请重新登录' })
-            router.push({
-              path: '/login'
-            })
+            // router.push({
+            //   path: '/login'
+            // })
           } else {
             let errorResponse = ''
             if (statusCode === 500) {

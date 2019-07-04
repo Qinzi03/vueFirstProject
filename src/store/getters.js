@@ -7,12 +7,11 @@ const getters = {
   cachedViews: state => state.tagsView.cachedViews,
   token: state => {
     const user = state.user.base
-
-    if (user.token && new Date().getTime() <= user.expire) {
-      return user.token
-    } else {
-      return ''
-    }
+    // if (user.token && new Date().getTime() <= user.expire) {
+    return user.token
+    // } else {
+    //   return ''
+    // }
   },
   avatar: state => state.user.avatar,
   name: state => state.user.name,

@@ -28,17 +28,17 @@
         <div v-if="pagination" class="lr-table--pagination">
           <el-pagination
             :disabled="page.state === 0"
-            @size-change="sizeChanged"
-            @current-change="currentChanged"
             :current-page.sync="page.page"
             :page-sizes="pageSizeList"
             :page-size="page.pageSize"
+            :total="page.total"
             layout="sizes, prev, pager, next"
-            :total="page.total">
+            @size-change="sizeChanged"
+            @current-change="currentChanged">
           </el-pagination>
- 
+
           <!-- <el-pagination :disabled="page.state === 0" :current-page.sync="page.page" :page-sizes="pageSizeList" :page-size.sync="page.pageSize" :total="page.total" background layout="prev, next, slot, jumper" @current-change="currentChanged" @size-change="sizeChanged" > -->
-            <!-- <span class="lr-table--pagination--slot">第
+          <!-- <span class="lr-table--pagination--slot">第
               <template v-if="page.total === 0 && page.page === 1">
                 0
               </template>

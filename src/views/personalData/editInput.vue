@@ -1,5 +1,5 @@
 <template>
-  <div class="edit-input-cpn" :class="{ 'editing': value }">
+  <div :class="{ 'editing': value }" class="edit-input-cpn">
     <span v-if="!value || !hideLabel" class="label">{{ label }}</span>
     <template v-if="value">
       <slot name="edit"></slot>
@@ -8,7 +8,7 @@
     </template>
     <template v-else>
       <slot name="normal"></slot>
-      <span @click="$emit('input', true)" class="svg-wrap">
+      <span class="svg-wrap" @click="$emit('input', true)">
         <svg-icon v-if="!disabled" style="cursor: pointer;" icon-class="ic_compile_normal1" />
       </span>
     </template>

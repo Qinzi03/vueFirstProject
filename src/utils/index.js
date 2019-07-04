@@ -376,12 +376,12 @@ export const formatSeconds = function(time) { // 将秒转化为时间
 export function formatNumber(val, digit) { // val:值，digit:位数
   digit = digit > 0 && digit <= 20 ? digit : 2
   val = parseFloat((val + '').replace(/[^\d\.-]/g, '')).toFixed(digit) + ''
-  let l = val.split('.')[0].split('').reverse()
-  let r = val.split('.')[1]
+  const l = val.split('.')[0].split('').reverse()
+  const r = val.split('.')[1]
   let t = ''
-  for (let i = 0; i < l.length; i++) { 
-    t += l[i] + ((i + 1) % 3 == 0 && (i + 1) != l.length ? ',' : '')
-  } 
+  for (let i = 0; i < l.length; i++) {
+    t += l[i] + ((i + 1) % 3 === 0 && (i + 1) !== l.length ? ',' : '')
+  }
   return t.split('').reverse().join('') + '.' + r
 }
 

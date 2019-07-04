@@ -3,8 +3,8 @@ import store from './store'
 import { Message } from 'element-ui'
 router.beforeEach((to, from, next) => {
   const token = store.getters.token
-  if (!token && !to.meta.noLogin) {
-    Message.warning({ message: '请重新登录' })
+  if ((!token && !to.meta.noLogin)) {
+    Message.warning({ message: '请重新登录111' })
     next({ path: '/login' })
   } else {
     if (to.name !== 'login' && !store.getters.addedRoutes) {
@@ -16,7 +16,7 @@ router.beforeEach((to, from, next) => {
         }).then(_ => {
           if (store.getters.addRouters.length === 0) {
             // 无任何菜单栏权限，则显示个人资料
-            router.push({ path: '/personalData' })
+            router.push({ path: '/' })
           }
         })
         // 网页刷新前进行提示

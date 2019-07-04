@@ -5,7 +5,7 @@
         <div v-if="isExpand" class="lr-sidebar-header">{{ routeItem.title }}</div>
         <div v-else class="lr-sidebar-split"></div>
         <div v-for="(route, $index) of routeItem.routeList" :key="$index">
-          <lr-sub-route :route="route" :parent-name="parentRouteName" :isExpand="isExpand"/>
+          <lr-sub-route :route="route" :parent-name="parentRouteName" :is-expand="isExpand"/>
         </div>
       </div>
     </div>
@@ -19,21 +19,21 @@ import { routeScopeMap } from '@/router'
 import SubRouterItem from './subRoute.vue'
 
 export default {
+  components: {
+    SidebarItem,
+    [SubRouterItem.name]: SubRouterItem
+  },
   props: {
     isExpand: {
       type: Boolean,
       default: true
     }
   },
-  components: {
-    SidebarItem,
-    [SubRouterItem.name]: SubRouterItem
-  },
   data() {
     return {
       lastMeta: null,
       currentRouteList: [],
-      parentRouteName: '',
+      parentRouteName: ''
     }
   },
   computed: {
@@ -80,22 +80,22 @@ export default {
   },
   methods: {
     updateIcon(val) {
-      if (this.lastMeta && this.lastMeta.icon.indexOf('_selected') !== -1) {
-        this.lastMeta.icon = this.lastMeta.icon.substring(0, this.lastMeta.icon.indexOf('_selected'))
-      }
-      const parentRoutePath = val.matched[0].path
+      // if (this.lastMeta && this.lastMeta.icon.indexOf('_selected') !== -1) {
+      //   this.lastMeta.icon = this.lastMeta.icon.substring(0, this.lastMeta.icon.indexOf('_selected'))
+      // }
+      // const parentRoutePath = val.matched[0].path
 
-      const currentRouteItem = this.permission_routers.filter(item => item.path === parentRoutePath)[0]
+      // const currentRouteItem = this.permission_routers.filter(item => item.path === parentRoutePath)[0]
 
-      if (currentRouteItem.children.length === 1) {
-        if (currentRouteItem.meta && currentRouteItem.meta.icon) {
-          this.updateCurrentIcon(currentRouteItem)
-        } else {
-          this.updateCurrentIcon(currentRouteItem.children[0])
-        }
-      } else {
-        this.updateCurrentIcon(currentRouteItem)
-      }
+      // if (currentRouteItem.children.length === 1) {
+      //   if (currentRouteItem.meta && currentRouteItem.meta.icon) {
+      //     this.updateCurrentIcon(currentRouteItem)
+      //   } else {
+      //     this.updateCurrentIcon(currentRouteItem.children[0])
+      //   }
+      // } else {
+      //   this.updateCurrentIcon(currentRouteItem)
+      // }
     },
     updateCurrentIcon(iconItem) {
       iconItem.meta.icon = iconItem.meta.icon + '_selected'

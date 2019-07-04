@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { routerPermission } from '@/constant/eventButtonPermission'
+// import { routerPermission } from '@/constant/eventButtonPermission'
 Vue.use(Router)
 
 /* Layout */
@@ -101,12 +101,12 @@ export const constantRouterMap = [
     path: '/401',
     component: () => import('@/views/errorPage/401'),
     hidden: true
-  },
-  {
-    path: '*',
-    component: () => import('@/views/errorPage/404'),
-    hidden: true
   }
+  // {
+  //   path: '*',
+  //   component: () => import('@/views/errorPage/404'),
+  //   hidden: true
+  // }
 ]
 
 export default new Router({
@@ -117,7 +117,7 @@ export default new Router({
 
 export const asyncRouterMap = [
   {
-    path: '',
+    path: '/',
     component: Layout,
     redirect: '/personalData',
     meta: {
@@ -128,7 +128,7 @@ export const asyncRouterMap = [
         path: 'personalData',
         component: () => import('@/views/personalData/index'),
         name: 'personalData',
-        meta: { title: '个人资料', icon: 'menu_home', noCache: true, permissionCode: routerPermission.dashboard.code }
+        meta: { title: '个人资料', icon: 'menu_home', noCache: true, permissionCode: 'code1' }
       }
     ]
   }

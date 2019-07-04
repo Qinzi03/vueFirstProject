@@ -46,9 +46,10 @@ import Toast from '@/components/Toast/index.js'
 import MessageBar from '@/components/MessageBar/index.vue'
 import ExpandContainer from '@/components/ExpandContainer/index.vue'
 import Focus from '@/directive/focus'
+import ClickoutSide from '@/directive/clickout-side'
 
 import Api from '@/api/index'
-
+import '@/mock'
 Vue.use(loading)
 Vue.component(PageComponent.name, PageComponent)
 Vue.component(Table.name, Table)
@@ -106,6 +107,7 @@ Vue.use(http)
 Vue.use(dateUtils)
 Vue.use(filter)
 Vue.use(Focus)
+Vue.use(ClickoutSide)
 
 // register global utility filters.
 Object.keys(filters).forEach(key => {

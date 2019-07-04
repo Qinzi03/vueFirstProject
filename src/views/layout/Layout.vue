@@ -1,9 +1,9 @@
 <template>
   <div :class="classObj" class="app-wrapper">
-    <div class="lr-sidebar-logo" :class="{ 'is-collapse': !isExpand }">
+    <div :class="{ 'is-collapse': !isExpand }" class="lr-sidebar-logo">
       后台管理
     </div>
-    <div class="lr-sidebar-info" :class="{ 'is-collapse': !isExpand }">
+    <div :class="{ 'is-collapse': !isExpand }" class="lr-sidebar-info">
       <div class="lr-sidebar-user">
         <div class="lr-sidebar-user--logo">
           <!-- <img src="../../assets/avatar.png"> -->
@@ -11,7 +11,7 @@
         <div class="lr-sidebar-user--detail">
           <el-dropdown :hide-on-click="false" @command="handleCommand">
             <span class="el-dropdown-link lr-hover" style="font-size: 14px;color: #FFFFFF;">
-              {{ isExpand ? userName : '' }}<i class="el-icon-arrow-down" :class="{ 'el-icon--right': isExpand }" />
+              {{ isExpand ? userName : '' }}<i :class="{ 'el-icon--right': isExpand }" class="el-icon-arrow-down" />
             </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="logout">退出登录</el-dropdown-item>
@@ -20,14 +20,14 @@
         </div>
       </div>
       <div class="lr-sidebar-user--separator" />
-      <sidebar class="sidebar-container" :isExpand="isExpand"/>
-      <div class="lr-sidebar-expand" :class="{ 'is-collapse': !isExpand }" @click="isExpand = !isExpand">
-        <img v-if="isExpand" src="../../assets/ic_arrow_left.svg" />
-        <img v-else src="../../assets/ic_arrow_right.svg" />
+      <sidebar :is-expand="isExpand" class="sidebar-container"/>
+      <div :class="{ 'is-collapse': !isExpand }" class="lr-sidebar-expand" @click="isExpand = !isExpand">
+        <img v-if="isExpand" src="../../assets/ic_arrow_left.svg" >
+        <img v-else src="../../assets/ic_arrow_right.svg" >
       </div>
     </div>
 
-    <div class="main-container" :class="{ 'is-collapse': !isExpand }">
+    <div :class="{ 'is-collapse': !isExpand }" class="main-container">
       <div class="lr-navbar-container">
         <navbar :class="{ 'is-collapse': !isExpand }" @logout="logout"/>
       </div>
@@ -41,16 +41,15 @@
 
 <script>
 import Navbar from './components/NavBar/index.vue'
-import { Sidebar, AppMain, } from './components'
+import { Sidebar, AppMain } from './components'
 import ResizeMixin from './mixin/ResizeHandler'
 import actionMixin from './mixin/actionMixin'
-import { batchInvoke } from '@/utils'
-import {mapGetters} from 'vuex'
 export default {
   name: 'Layout',
   beforeRouteEnter(to, from, next) {
     next(vm => {
       if (from && from.name === 'login') {
+        // tianjia
       }
     })
   },
@@ -87,7 +86,7 @@ export default {
     handleCommand(command) {
       this[command]()
     },
-    openGlobalDialog () {
+    openGlobalDialog() {
       this.$message.info('可自定义')
     }
   }

@@ -8,6 +8,7 @@ export default {
       'refreshToken': '07e5c5c6-94eb-40e8-bc11-6a2322ae99c4',
       'refreshExpire': 1537019183943,
       'userId': 123456,
+      'permissions': [{ 'code': 'code1' }],
       'ents': [{
         'entId': 111,
         'entName': 'A企业'

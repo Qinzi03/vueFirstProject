@@ -1,7 +1,7 @@
 /**
  * api 路径
  */
-export const basePath = '/api'
+export const basePath = ''
 
 const apiMap = {
   'login': `${basePath}/iam/oauth/token`, // '/iam/oauth/token', // 登陆 (本地登录请替换成 /login)

@@ -8,7 +8,7 @@
     :close-on-click-modal="modal"
     :width="width"
     class="lr-dialog-form">
-    <i class="icon-ic_cancel_normal1 iconfont deleteIcon" v-if="showCancel" @click="cancelDialog" />
+    <i v-if="showCancel" class="icon-ic_cancel_normal1 iconfont deleteIcon" @click="cancelDialog" />
     <div v-if="showBack" class="lr-dialog-form__back" @click="toBack">
       <i class="el-icon-arrow-left" style="margin-right: 6px" />返回
     </div>
@@ -20,8 +20,8 @@
       <slot />
     </div>
     <span v-if="showFooter" slot="footer">
-      <el-button class="lr-cancel-text floatL" type="primary" v-if="showCancel" @click="cancelDialog">{{ cancelText }}</el-button>
-      <i class="lr-btn-split" v-if="showCancel" />
+      <el-button v-if="showCancel" class="lr-cancel-text floatL" type="primary" @click="cancelDialog">{{ cancelText }}</el-button>
+      <i v-if="showCancel" class="lr-btn-split" />
       <el-button :disabled="confirmDisabled" :class="{ 'lr-only-confirmbtn': !showCancel }" type="primary" @click="confirm">{{ confirmText }}</el-button>
     </span>
   </el-dialog>

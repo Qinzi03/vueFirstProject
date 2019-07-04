@@ -1,16 +1,16 @@
 <template>
   <li class="lr-department">
-    <div class="lr-department-content" :class="{ 'showFirst': model.first }">
+    <div :class="{ 'showFirst': model.first }" class="lr-department-content">
       <i
         v-show="!model.first"
-        @click="model.hasChild = !model.hasChild"
+        :class="{ 'icon-right': model.hasChild, 'icon-bottom': !model.hasChild }"
         class="el-icon-caret-right"
-        :class="{ 'icon-right': model.hasChild, 'icon-bottom': !model.hasChild }" />
+        @click="model.hasChild = !model.hasChild" />
       <span @click="showTable(model)">
         <!-- {{ model.id === activeId }} -->
         {{ model.name }}
       </span>
-      <div class="icon" v-if="!model.first">
+      <div v-if="!model.first" class="icon">
         <i class="icon-ic_add_normal iconfont" @click="addplus(model)" />
         <i class="icon-ic_compile_normal1 iconfont" @click="editplus(model)" />
         <i class="icon-ic_delate_normal iconfont" @click="deleteplus(model)" />
@@ -24,7 +24,7 @@
 <script>
 import bus from '@/utils/bus'
 export default {
-  name: 'treeMenu',
+  name: 'TreeMenu',
   props: {
     model: {
       type: Object,

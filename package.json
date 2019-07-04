@@ -4,9 +4,9 @@
   "description": "Backend scaffold based on vue-element-admin",
   "author": "ListenRobotFE",
   "scripts": {
-    "dev": "cross-env BABEL_ENV=development env_config=dev webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "cross-env BABEL_ENV=development env_config=dev webpack-dev-server --compress --inline --progress --config build/webpack.dev.conf.js",
     "build": "cross-env NODE_ENV=production env_config=prod node build/build.js",
-    "lint": "eslint --ext .js,.vue src",
+    "lint": "eslint --ext .js,.vue src --fix --cache --debug",
     "test": "npm run lint",
     "lint-fix": "eslint --fix .js,.vue src",
     "generateDoc": "mammoth document.docx document.html"

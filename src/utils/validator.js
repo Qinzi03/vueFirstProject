@@ -1,4 +1,4 @@
-let vadilator = {
+const vadilator = {
   // 密码
   password(rule, value, callback, myCallback) {
     if (!value) {
